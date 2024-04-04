@@ -8,4 +8,7 @@
     <file>fullscreen.svg</file>
     <file>minus.svg</file>
   </qresource>
+  <qresource prefix="Placeholding">
+    <file>Placeholding/10972.png</file>
+  </qresource>
 </RCC>
