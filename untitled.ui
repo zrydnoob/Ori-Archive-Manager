@@ -402,7 +402,7 @@ color: rgb(230, 230, 230);</string>
 color: rgb(255, 255, 255);</string>
             </property>
             <property name="currentIndex">
-             <number>1</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="page">
              <property name="styleSheet">
@@ -1100,59 +1100,28 @@ QListWidget:focus{
               </item>
              </layout>
             </widget>
-            <widget class="QWidget" name="page_5">
+            <widget class="QWidget" name="page_3">
              <property name="styleSheet">
               <string notr="true">QWidget{
 	background-color: transparent;
 }</string>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_7" stretch="0,1">
-              <item>
-               <widget class="QLabel" name="label_9">
-                <property name="styleSheet">
-                 <string notr="true">font: 12pt &quot;Alibaba PuHuiTi 3.0&quot;;</string>
-                </property>
-                <property name="text">
-                 <string>关于</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QFrame" name="frame_8">
-                <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_6">
-                 <item>
-                  <widget class="QLabel" name="label_14">
-                   <property name="styleSheet">
-                    <string notr="true">font: 14pt &quot;Alibaba PuHuiTi 3.0&quot;;</string>
-                   </property>
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ori外置存档&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignBottom|Qt::AlignHCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="label_15">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;作者:                zrydnoob&lt;/p&gt;&lt;p&gt;版本:                v0.1.0&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignHCenter|Qt::AlignTop</set>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-             </layout>
+             <widget class="QLabel" name="label_7">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>10</y>
+                <width>80</width>
+                <height>22</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 12pt &quot;Alibaba PuHuiTi 3.0&quot;;</string>
+              </property>
+              <property name="text">
+               <string>存档备份</string>
+              </property>
+             </widget>
             </widget>
             <widget class="QWidget" name="page_4">
              <property name="styleSheet">
@@ -1366,28 +1335,59 @@ background-color: rgba(255, 255, 255, 10);
               </item>
              </layout>
             </widget>
-            <widget class="QWidget" name="page_3">
+            <widget class="QWidget" name="page_5">
              <property name="styleSheet">
               <string notr="true">QWidget{
 	background-color: transparent;
 }</string>
              </property>
-             <widget class="QLabel" name="label_7">
-              <property name="geometry">
-               <rect>
-                <x>10</x>
-                <y>10</y>
-                <width>80</width>
-                <height>22</height>
-               </rect>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">font: 12pt &quot;Alibaba PuHuiTi 3.0&quot;;</string>
-              </property>
-              <property name="text">
-               <string>存档备份</string>
-              </property>
-             </widget>
+             <layout class="QVBoxLayout" name="verticalLayout_7" stretch="0,1">
+              <item>
+               <widget class="QLabel" name="label_9">
+                <property name="styleSheet">
+                 <string notr="true">font: 12pt &quot;Alibaba PuHuiTi 3.0&quot;;</string>
+                </property>
+                <property name="text">
+                 <string>关于</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="frame_8">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_6">
+                 <item>
+                  <widget class="QLabel" name="label_14">
+                   <property name="styleSheet">
+                    <string notr="true">font: 14pt &quot;Alibaba PuHuiTi 3.0&quot;;</string>
+                   </property>
+                   <property name="text">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ori外置存档&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_15">
+                   <property name="text">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;作者:                zrydnoob&lt;/p&gt;&lt;p&gt;版本:                v0.1.0&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignHCenter|Qt::AlignTop</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
             </widget>
            </widget>
           </item>
