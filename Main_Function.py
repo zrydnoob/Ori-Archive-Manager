@@ -8,6 +8,7 @@ from PyQt5.QtGui import *
 import json
 import os
 import subprocess
+import re
 
 
 
@@ -118,4 +119,8 @@ class fun_main(QtWidgets.QMainWindow, Ui_MainWindow):
     def nameToInfo(self):
         savePath = settingJson["gameSavePath"] + "/" + str(self.buttonGroup.button(self.buttonGroup.checkedId()).property("saveName"))
         print(savePath)
-        
+
+        with open(savePath, "r", encoding='gbk',errors="ignore") as f:
+            saveData = [line.strip() for line in f]
+        areaName = saveData[0]
+        self.label_17.setText(re.sub(r"[\W]", "", areaName)[7:])

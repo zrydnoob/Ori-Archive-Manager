@@ -402,7 +402,7 @@ color: rgb(230, 230, 230);</string>
 color: rgb(255, 255, 255);</string>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="page">
              <property name="styleSheet">
@@ -1054,21 +1054,21 @@ QListWidget:focus{
                          <item>
                           <widget class="QLabel" name="label_17">
                            <property name="text">
-                            <string>名称</string>
+                            <string>所在区域</string>
                            </property>
                           </widget>
                          </item>
                          <item>
                           <widget class="QLabel" name="label_18">
                            <property name="text">
-                            <string>进度</string>
+                            <string>玩家属性</string>
                            </property>
                           </widget>
                          </item>
                          <item>
                           <widget class="QLabel" name="label_19">
                            <property name="text">
-                            <string>创建日期</string>
+                            <string>所用时间</string>
                            </property>
                           </widget>
                          </item>
