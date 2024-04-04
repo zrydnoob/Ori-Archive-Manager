@@ -4,7 +4,7 @@ from Main_Window import Ui_MainWindow
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import *
-from PyQt5.QtGui import QColor,QEnterEvent
+from PyQt5.QtGui import *
 import json
 import os
 import subprocess
@@ -20,12 +20,18 @@ class fun_main(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.listWidget.itemClicked.connect(self.switchPages)
         self.setting()
+        self.findGameSave()
 
         self.pushButton_21.clicked.connect(self.selectGameSavePath)
         self.pushButton_23.clicked.connect(self.selectLocalSavePath)
 
         self.pushButton_22.clicked.connect(self.openGameSavePath)
         self.pushButton_24.clicked.connect(self.openLocalSavePath)
+
+        self.pushButton_8.clicked.connect(self.findGameSave)
+
+        self.buttonGroup.buttonClicked.connect(self.nameToInfo)
+
 
     def mousePressEvent(self, event):
         if event.button() == Qt.LeftButton:
@@ -99,3 +105,17 @@ class fun_main(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def openLocalSavePath(self):
         os.startfile(settingJson["localSavePath"])
+
+    def findGameSave(self):
+        saveList_HB = os.listdir(settingJson["gameSavePath"])
+
+        saveList = [s for s in saveList_HB if 'saveFile' in s and 'bkup' not in s]
+        child_widgets = self.frame_9.findChildren(QRadioButton)
+        for i in range(0,len(saveList)):
+            child_widgets[i].setProperty("saveName",saveList[i])
+            print(child_widgets[i].property("saveName"))
+    
+    def nameToInfo(self):
+        savePath = settingJson["gameSavePath"] + "/" + str(self.buttonGroup.button(self.buttonGroup.checkedId()).property("saveName"))
+        print(savePath)
+        
