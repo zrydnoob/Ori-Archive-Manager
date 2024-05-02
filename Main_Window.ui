@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>924</width>
-    <height>504</height>
+    <width>831</width>
+    <height>503</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -83,15 +83,6 @@ QPushButton:focus{
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout">
-          <property name="leftMargin">
-           <number>2</number>
-          </property>
-          <property name="topMargin">
-           <number>2</number>
-          </property>
-          <property name="bottomMargin">
-           <number>2</number>
-          </property>
           <item>
            <widget class="QFrame" name="frame">
             <property name="frameShape">
@@ -362,15 +353,69 @@ color: rgb(255, 255, 255);</string>
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="label_2">
-            <property name="styleSheet">
-             <string notr="true">font: 7pt &quot;Alibaba PuHuiTi 3.0&quot;;
+           <layout class="QHBoxLayout" name="horizontalLayout_9">
+            <item>
+             <widget class="QLabel" name="label_2">
+              <property name="styleSheet">
+               <string notr="true">font: 7pt &quot;Alibaba PuHuiTi 3.0&quot;;
 color: rgb(230, 230, 230);</string>
-            </property>
-            <property name="text">
-             <string>by zrydnoob</string>
-            </property>
-           </widget>
+              </property>
+              <property name="text">
+               <string>by zrydnoob</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_10">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <item>
+               <spacer name="horizontalSpacer_4">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QWidget" name="widget" native="true">
+                <property name="minimumSize">
+                 <size>
+                  <width>16</width>
+                  <height>16</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16</width>
+                  <height>16</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-image: url(:/icon/git-commit.svg);</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_22">
+                <property name="styleSheet">
+                 <string notr="true">font: 7pt &quot;Alibaba PuHuiTi 3.0&quot;;
+color: rgb(230, 230, 230);</string>
+                </property>
+                <property name="text">
+                 <string>最新提交版本</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
           </item>
          </layout>
         </widget>

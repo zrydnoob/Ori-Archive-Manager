@@ -10,10 +10,13 @@ import os
 import subprocess
 import re
 import webbrowser
+import tools.GitHubTools
 
 
 class fun_main(QtWidgets.QMainWindow, Ui_MainWindow):
     setting = ""
+    global repo
+    repo = "zrydnoob/Ori-Archive-Manager"
     def __init__(self):
         super(fun_main, self).__init__()
         self.setWindowFlags(Qt.FramelessWindowHint)
@@ -34,6 +37,10 @@ class fun_main(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_9.clicked.connect(self.openGithub)
 
         self.buttonGroup.buttonClicked.connect(self.nameToInfo)
+        try:
+            self.label_22.setText(tools.GitHubTools.getLastCommit(repo)['sha'][0:7])
+        except:
+            self.label_22.setText("无法获取")
 
 
     def mousePressEvent(self, event):

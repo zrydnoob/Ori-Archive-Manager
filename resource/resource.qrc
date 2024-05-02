@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="icon">
+    <file>git-commit.svg</file>
     <file>file-copy.svg</file>
     <file>info-circle.svg</file>
     <file>save.svg</file>
