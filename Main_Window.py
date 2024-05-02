@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\work\OrSave\untitled.ui'
+# Form implementation generated from reading ui file 'd:\work\OrSave\Main_Window.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -200,6 +200,11 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.listWidget)
         spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout.addItem(spacerItem2)
+        self.pushButton_9 = QtWidgets.QPushButton(self.frame_3)
+        self.pushButton_9.setStyleSheet("font: 9pt \"Alibaba PuHuiTi 3.0\";\n"
+"color: rgb(255, 255, 255);")
+        self.pushButton_9.setObjectName("pushButton_9")
+        self.verticalLayout.addWidget(self.pushButton_9)
         self.label_2 = QtWidgets.QLabel(self.frame_3)
         self.label_2.setStyleSheet("font: 7pt \"Alibaba PuHuiTi 3.0\";\n"
 "color: rgb(230, 230, 230);")
@@ -869,6 +874,7 @@ class Ui_MainWindow(object):
         item = self.listWidget.item(3)
         item.setText(_translate("MainWindow", "关于"))
         self.listWidget.setSortingEnabled(__sortingEnabled)
+        self.pushButton_9.setText(_translate("MainWindow", "GitHub 仓库"))
         self.label_2.setText(_translate("MainWindow", "by zrydnoob"))
         self.label_3.setText(_translate("MainWindow", "欢迎使用"))
         self.label_4.setText(_translate("MainWindow", "不再为存档槽位而烦恼"))
@@ -883,7 +889,7 @@ class Ui_MainWindow(object):
         self.label_16.setText(_translate("MainWindow", "存档信息"))
         self.label_17.setText(_translate("MainWindow", "所在区域"))
         self.label_18.setText(_translate("MainWindow", "玩家属性"))
-        self.label_19.setText(_translate("MainWindow", "花费时间"))
+        self.label_19.setText(_translate("MainWindow", "所用时间"))
         self.label_21.setText(_translate("MainWindow", "操作窗口"))
         self.pushButton_7.setText(_translate("MainWindow", "移动到本地"))
         self.pushButton_5.setText(_translate("MainWindow", "移动到游戏"))

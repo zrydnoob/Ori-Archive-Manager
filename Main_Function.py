@@ -9,7 +9,7 @@ import json
 import os
 import subprocess
 import re
-
+import webbrowser
 
 
 class fun_main(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -30,6 +30,8 @@ class fun_main(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_24.clicked.connect(self.openLocalSavePath)
 
         self.pushButton_8.clicked.connect(self.findGameSave)
+
+        self.pushButton_9.clicked.connect(self.openGithub)
 
         self.buttonGroup.buttonClicked.connect(self.nameToInfo)
 
@@ -84,6 +86,11 @@ class fun_main(QtWidgets.QMainWindow, Ui_MainWindow):
                 json.dump(data, file, indent=4)
             self.setting()
 
+    # 打开Github仓库
+    def openGithub(self):
+        webbrowser.open("https://github.com/zrydnoob/Ori-Archive-Manager")
+
+        pass
 # 选择本地存档目录
     def selectLocalSavePath(self):
         dir_path = QFileDialog.getExistingDirectory(self, "选择目录", "F:/", QFileDialog.ShowDirsOnly)
@@ -117,10 +124,13 @@ class fun_main(QtWidgets.QMainWindow, Ui_MainWindow):
             print(child_widgets[i].property("saveName"))
     
     def nameToInfo(self):
-        savePath = settingJson["gameSavePath"] + "/" + str(self.buttonGroup.button(self.buttonGroup.checkedId()).property("saveName"))
-        print(savePath)
+        try:
+            savePath = settingJson["gameSavePath"] + "/" + str(self.buttonGroup.button(self.buttonGroup.checkedId()).property("saveName"))
+            print(savePath)
 
-        with open(savePath, "r", encoding='gbk',errors="ignore") as f:
-            saveData = [line.strip() for line in f]
-        areaName = saveData[0]
-        self.label_17.setText(re.sub(r"[\W]", "", areaName)[7:])
+            with open(savePath, "r", encoding='gbk',errors="ignore") as f:
+                saveData = [line.strip() for line in f]
+            areaName = saveData[0]
+            self.label_17.setText(re.sub(r"[\W]", "", areaName)[7:])
+        except:
+            self.label_17.setText("Error:无法读取")

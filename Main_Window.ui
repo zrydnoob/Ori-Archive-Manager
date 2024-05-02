@@ -351,6 +351,17 @@ QListWidget:focus{
            </spacer>
           </item>
           <item>
+           <widget class="QPushButton" name="pushButton_9">
+            <property name="styleSheet">
+             <string notr="true">font: 9pt &quot;Alibaba PuHuiTi 3.0&quot;;
+color: rgb(255, 255, 255);</string>
+            </property>
+            <property name="text">
+             <string>GitHub 仓库</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QLabel" name="label_2">
             <property name="styleSheet">
              <string notr="true">font: 7pt &quot;Alibaba PuHuiTi 3.0&quot;;
@@ -402,7 +413,7 @@ color: rgb(230, 230, 230);</string>
 color: rgb(255, 255, 255);</string>
             </property>
             <property name="currentIndex">
-             <number>1</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="page">
              <property name="styleSheet">
