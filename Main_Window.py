@@ -586,8 +586,8 @@ class Ui_MainWindow(object):
         self.label_20.setStyleSheet("")
         self.label_20.setObjectName("label_20")
         self.verticalLayout_10.addWidget(self.label_20)
-        self.listWidget1 = QtWidgets.QListWidget(self.frame_11)
-        self.listWidget1.setStyleSheet("QListWidget{\n"
+        self.listWidget_2 = QtWidgets.QListWidget(self.frame_11)
+        self.listWidget_2.setStyleSheet("QListWidget{\n"
 "    background-color: transparent;\n"
 "    border:none;\n"
 "    font: 11pt \"Alibaba PuHuiTi 3.0\";\n"
@@ -651,13 +651,8 @@ class Ui_MainWindow(object):
 "      background: rgba(64, 65, 79, 0);\n"
 "      }\n"
 "")
-        self.listWidget1.setObjectName("listWidget1")
-        item = QtWidgets.QListWidgetItem()
-        icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap(":/Placeholding/Placeholding/10972.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        item.setIcon(icon4)
-        self.listWidget1.addItem(item)
-        self.verticalLayout_10.addWidget(self.listWidget1)
+        self.listWidget_2.setObjectName("listWidget_2")
+        self.verticalLayout_10.addWidget(self.listWidget_2)
         self.verticalLayout_12.addWidget(self.frame_11)
         self.frame_12 = QtWidgets.QFrame(self.page_2)
         self.frame_12.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -901,11 +896,6 @@ class Ui_MainWindow(object):
         self.label_5.setText(_translate("MainWindow", "存档管理"))
         self.label_6.setText(_translate("MainWindow", "游戏存档"))
         self.label_20.setText(_translate("MainWindow", "本地存档"))
-        __sortingEnabled = self.listWidget1.isSortingEnabled()
-        self.listWidget1.setSortingEnabled(False)
-        item = self.listWidget1.item(0)
-        item.setText(_translate("MainWindow", "新建项目"))
-        self.listWidget1.setSortingEnabled(__sortingEnabled)
         self.label_16.setText(_translate("MainWindow", "存档信息"))
         self.label_17.setText(_translate("MainWindow", "所在区域"))
         self.label_18.setText(_translate("MainWindow", "玩家属性"))
@@ -925,7 +915,7 @@ class Ui_MainWindow(object):
         self.label_12.setText(_translate("MainWindow", "本地存档路径"))
         self.label_13.setText(_translate("MainWindow", "null"))
         self.pushButton_23.setText(_translate("MainWindow", "选择本地存档目录"))
-        self.pushButton_24.setText(_translate("MainWindow", "打开游戏存档目录"))
+        self.pushButton_24.setText(_translate("MainWindow", "打开本地存档目录"))
         self.label_9.setText(_translate("MainWindow", "关于"))
         self.label_14.setText(_translate("MainWindow", "<html><head/><body><p>Ori外置存档</p></body></html>"))
         self.label_15.setText(_translate("MainWindow", "<html><head/><body><p>作者:                zrydnoob</p><p>版本:                v0.1.0</p></body></html>"))

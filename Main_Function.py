@@ -25,6 +25,7 @@ class fun_main(QtWidgets.QMainWindow, Ui_MainWindow):
         self.listWidget.itemClicked.connect(self.switchPages)
         self.setting()
         self.findGameSave()
+        self.findLocalSaves()
 
         self.pushButton_21.clicked.connect(self.selectGameSavePath)
         self.pushButton_23.clicked.connect(self.selectLocalSavePath)
@@ -32,7 +33,7 @@ class fun_main(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_22.clicked.connect(self.openGameSavePath)
         self.pushButton_24.clicked.connect(self.openLocalSavePath)
 
-        self.pushButton_8.clicked.connect(self.findGameSave)
+        self.pushButton_8.clicked.connect(self.refresh)
 
         self.pushButton_9.clicked.connect(self.openGithub)
 
@@ -42,6 +43,10 @@ class fun_main(QtWidgets.QMainWindow, Ui_MainWindow):
         except:
             self.label_22.setText("无法获取")
 
+
+        # 存档操作按钮时间绑定
+        self.pushButton_6.clicked.connect(self.copyToLocal)
+        self.pushButton_7.clicked.connect(self.moveToLocal)
 
     def mousePressEvent(self, event):
         if event.button() == Qt.LeftButton:
@@ -140,4 +145,50 @@ class fun_main(QtWidgets.QMainWindow, Ui_MainWindow):
             areaName = saveData[0]
             self.label_17.setText(re.sub(r"[\W]", "", areaName)[7:])
         except:
-            self.label_17.setText("Error:无法读取")
+            self.label_17.setText("所在区域")
+
+    def findLocalSaves(self):
+        saveList_BD = os.listdir(settingJson["localSavePath"])
+        print(saveList_BD)
+        self.listWidget_2.clear()
+        for i in range(0,len(saveList_BD)):
+            item = QtWidgets.QListWidgetItem()
+            self.listWidget_2.addItem(item)
+            item = self.listWidget_2.item(i)
+            icon = QtGui.QIcon()
+            icon.addPixmap(QtGui.QPixmap(":/Placeholding/Placeholding/10972.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            item.setIcon(icon)
+            item.setText(saveList_BD[i])
+
+    def refresh(self):
+        self.findLocalSaves()
+        self.findGameSave()
+
+    def copyToLocal(self):
+        try:
+            savePath = settingJson["gameSavePath"] + "/" + str(self.buttonGroup.button(self.buttonGroup.checkedId()).property("saveName"))
+            copyToPath = settingJson["localSavePath"] + "/" + str(self.buttonGroup.button(self.buttonGroup.checkedId()).property("saveName"))
+            self.copyFile(savePath,copyToPath)
+        except:
+            pass
+        self.refresh()
+
+
+    def moveToLocal(self):
+        try:
+            savePath = settingJson["gameSavePath"] + "/" + str(self.buttonGroup.button(self.buttonGroup.checkedId()).property("saveName"))
+            moveToPath = settingJson["localSavePath"] + "/" + str(self.buttonGroup.button(self.buttonGroup.checkedId()).property("saveName"))
+            self.moveFile(savePath,moveToPath)
+        except:
+            pass
+        self.refresh()
+
+    def copyFile(self,fr:str,to:str):
+        with open(fr, "r") as source_file:  
+            with open(to, "w") as target_file:
+                for line in source_file.readlines():
+                    target_file.write(line)
+
+    def moveFile(self,source_path:str, destination_path:str):
+        self.copyFile(source_path,destination_path)
+        os.remove(source_path)

@@ -959,7 +959,7 @@ QRadioButton::indicator::checked {
                   </widget>
                  </item>
                  <item>
-                  <widget class="QListWidget" name="listWidget">
+                  <widget class="QListWidget" name="listWidget_2">
                    <property name="styleSheet">
                     <string notr="true">QListWidget{
 	background-color: transparent;
@@ -1026,15 +1026,6 @@ QListWidget:focus{
       }
 </string>
                    </property>
-                   <item>
-                    <property name="text">
-                     <string>新建项目</string>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="resource/resource.qrc">
-                      <normaloff>:/Placeholding/Placeholding/10972.png</normaloff>:/Placeholding/Placeholding/10972.png</iconset>
-                    </property>
-                   </item>
                   </widget>
                  </item>
                 </layout>
